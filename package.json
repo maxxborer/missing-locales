@@ -16,7 +16,8 @@
   "scripts": {
     "dev": "pnpm --dir packages/vite-i18n-missing-locales dev",
     "build": "pnpm -r build",
-    "release": "pnpm run build && pnpm changeset publish"
+    "release": "pnpm run build && pnpm changeset publish",
+    "publish": "pnpm -r publish"
   },
   "engines": {
     "pnpm": "^7.5.0",

@@ -29,7 +29,7 @@ export default {
     // ...other plugins
     // `command === 'serve'` for run plugin only in dev mode
     command === 'serve' && viteI18nMissingLocales({
-      path: './src/localess', // optional, default is './src/localess'
+      path: './src/locales', // optional, default is './src/locales'
       wait: 500, // optional, default is 500 (milliseconds)
     }),
   ],
@@ -38,7 +38,7 @@ export default {
 
 ## Options
 
-- `path` (optional, default is `'./src/localess'`): the path to the `src/locales` directory.
+- `path` (optional, default is `'./src/locales'`): the path to the `src/locales` directory.
 - `wait` (optional, default is `500`): the number of milliseconds to wait before running the plugin.
 
 ## Output

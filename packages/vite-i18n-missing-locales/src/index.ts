@@ -29,7 +29,7 @@ type VitePlugin = import("vite").Plugin;
 export default function viteI18nMissingLocales(
   options: ViteI18nMissingLocalesOptions
 ): VitePlugin {
-  const { path: dirPath = "./src/localess", wait: waitBeforeRun = 500 } =
+  const { path: dirPath = "./src/locales", wait: waitBeforeRun = 500 } =
     options;
   let isFirstRun = true;
 
