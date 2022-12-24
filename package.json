@@ -1,0 +1,31 @@
+{
+  "name": "vite-i18n-missing-locales",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Maxx Borer <maxxborer@gmail.com>",
+  "description": "A Vite plugin that helps you find missed keys in your localization files.",
+  "keywords": [
+    "vite",
+    "i18n",
+    "localization",
+    "missing",
+    "keys"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "dev": "pnpm --dir packages/vite-i18n-missing-locales dev",
+    "build": "pnpm -r build",
+    "release": "pnpm run build && pnpm changeset publish"
+  },
+  "engines": {
+    "pnpm": "^7.5.0",
+    "yarn": "forbidden, use pnpm",
+    "npm": "forbidden, use pnpm",
+    "node": "^16.0.0 || >=18"
+  },
+  "pnpm": {
+    "overrides": {
+      "vite-i18n-missing-locales": "workspace:*"
+    }
+  }
+}

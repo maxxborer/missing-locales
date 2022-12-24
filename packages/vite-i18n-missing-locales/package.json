@@ -1,0 +1,45 @@
+{
+  "name": "vite-i18n-missing-locales",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Maxx Borer <maxxborer@gmail.com>",
+  "description": "A Vite plugin that helps you find missed keys in your localization files.",
+  "keywords": [
+    "vite",
+    "i18n",
+    "localization",
+    "missing",
+    "keys"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "dev": "tsup-node --watch src",
+    "build": "tsup-node --dts"
+  },
+  "engines": {
+    "node": "^16.0.0 || >=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/borerteam/vite-i18n-missing-locales.git",
+    "directory": "packages/vite-i18n-missing-locales"
+  },
+  "bugs": {
+    "url": "https://github.com/borerteam/vite-i18n-missing-locales/issues"
+  },
+  "homepage": "https://github.com/borerteam/vite-i18n-missing-locales/packages/vite-plugin-config-env#readme",
+  "devDependencies": {
+    "vite": "^3.2.4"
+  }
+}
