@@ -50,21 +50,29 @@ export default function viteI18nMissingLocales(
             fs.statSync(path.join(localesPath, name)).isDirectory()
           );
 
-        const getJsonFiles = (pathDir: string) => {
+        const getJsonFiles = (pathDir: string): string[] => {
           return fs
             .readdirSync(pathDir)
-            .reduce((files, file) => {
-              const name = path.join(pathDir, file);
-              return fs.statSync(name).isDirectory()
-                ? [...files, ...getJsonFiles(name)]
-                : [...files, name];
-            }, [])
+            .reduce(
+              (
+                files: string[],
+                file: string,
+                _currentIndex: number,
+                _array: string[]
+              ) => {
+                const name = path.join(pathDir, file);
+                return fs.statSync(name).isDirectory()
+                  ? [...files, ...getJsonFiles(name)]
+                  : [...files, name];
+              },
+              []
+            )
             .filter((file) => file.endsWith(".json"));
         };
 
         const files = getJsonFiles(localesPath);
 
-        const keys = files.reduce((keys, file) => {
+        const keys = files.reduce((keys: string[], file: string) => {
           const content = fs.readFileSync(file, "utf8");
           const json = JSON.parse(content);
           return [...keys, ...Object.keys(json)];
@@ -73,20 +81,20 @@ export default function viteI18nMissingLocales(
         const missedKeys = [];
 
         for (const locale of locales) {
-          const localeFiles = files.filter((file) =>
-            file.includes(`/${locale}/`)
+          const localeFiles = files.filter(
+            (file) => file.indexOf(`/${locale}/`) !== -1
           );
           if (localeFiles.length) {
-            const localeKeys = localeFiles.reduce((keys, file) => {
-              const content = fs.readFileSync(file, "utf8");
-              const json = JSON.parse(content);
-              return [...keys, ...Object.keys(json)];
-            }, []);
-            const namespace = localeFiles[0]
-              .split("/")
-              .pop()
-              .split(".")
-              .shift();
+            const localeKeys = localeFiles.reduce(
+              (keys: string[], file: string) => {
+                const content = fs.readFileSync(file, "utf8");
+                const json = JSON.parse(content);
+                return [...keys, ...Object.keys(json)];
+              },
+              []
+            );
+            const localeFolderName = localeFiles[0].split("/").pop() || "";
+            const namespace = localeFolderName.split(".").shift();
             for (const key of keys) {
               if (localeKeys.indexOf(key) === -1) {
                 missedKeys.push(

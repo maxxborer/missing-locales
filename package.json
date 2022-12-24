@@ -2,6 +2,7 @@
   "name": "vite-i18n-missing-locales",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "author": "Maxx Borer <maxxborer@gmail.com>",
   "description": "A Vite plugin that helps you find missed keys in your localization files.",
   "keywords": [
