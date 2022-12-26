@@ -1,19 +1,19 @@
-# vite-i18n-missing-locales
+# vite-plugin-missing-locales
 
 A Vite plugin that helps you find missed keys in your localization files in `src/locales/{locale}/*.json`.
 
 ## Installation
 
 ```bash
-npm install vite-i18n-missing-locales
+npm install vite-plugin-missing-locales
 ```
 
 ```bash
-yarn add vite-i18n-missing-locales
+yarn add vite-plugin-missing-locales
 ```
 
 ```bash
-pnpm add vite-i18n-missing-locales
+pnpm add vite-plugin-missing-locales
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ pnpm add vite-i18n-missing-locales
 Add the plugin to your `vite.config.js` file:
 
 ```js
-import viteI18nMissingLocales from 'vite-i18n-missing-locales';
+import viteI18nMissingLocales from 'vite-plugin-missing-locales';
 
 export default {
   // ...other options
@@ -30,7 +30,8 @@ export default {
     // `command === 'serve'` for run plugin only in dev mode
     command === 'serve' && viteI18nMissingLocales({
       path: './src/locales', // optional, default is './src/locales'
-      wait: 500, // optional, default is 500 (milliseconds)
+      wait: 500, // optional, default is 500 (milliseconds),
+      defaultNamespace: 'translation', // optional, default is 'translation'
     }),
   ],
 };
@@ -40,21 +41,22 @@ export default {
 
 - `path` (optional, default is `'./src/locales'`): the path to the `src/locales` directory.
 - `wait` (optional, default is `500`): the number of milliseconds to wait before running the plugin.
+- `defaultNamespace` (optional, default is `'translation'`): the default namespace to use when the namespace is not specified.
 
 ## Output
 
 The plugin will output a list of strings in the following format:
 
 ```log
-[missing-locale] ${locale}/${namespace}.json -> '${key}'
+[vite-plugin-missing-locales] ${locale}/${namespace}.json -> '${key}'
 ```
 
 For example:
 
 ```log
-[missing-locale] en/common.json -> 'hello'
-[missing-locale] ua/auth.json -> 'login'
-[missing-locale] ru/error.json -> 'help'
+[vite-plugin-missing-locales] en/common.json -> 'hello'
+[vite-plugin-missing-locales] ua/auth.json -> 'login'
+[vite-plugin-missing-locales] ru/error.json -> 'help'
 ```
 
 This indicates that the `'hello'` key is missing from the `en/common.json` file.

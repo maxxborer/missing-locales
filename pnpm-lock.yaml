@@ -1,9 +1,12 @@
 lockfileVersion: 5.4
 
 overrides:
-  vite-i18n-missing-locales: workspace:*
+  vite-plugin-missing-locales: workspace:*
 
 importers:
+
+  .:
+    specifiers: {}
 
   packages/vite-i18n-missing-locales:
     specifiers:

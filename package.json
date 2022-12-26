@@ -1,5 +1,5 @@
 {
-  "name": "vite-i18n-missing-locales",
+  "name": "vite-plugin-missing-locales",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -14,7 +14,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "dev": "pnpm --dir packages/vite-i18n-missing-locales dev",
+    "dev": "pnpm --dir packages/vite-plugin-missing-locales dev",
     "build": "pnpm -r build",
     "release": "pnpm run build && pnpm changeset publish",
     "publish": "pnpm -r publish"
@@ -27,7 +27,7 @@
   },
   "pnpm": {
     "overrides": {
-      "vite-i18n-missing-locales": "workspace:*"
+      "vite-plugin-missing-locales": "workspace:*"
     }
   }
 }
