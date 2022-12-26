@@ -1,5 +1,5 @@
 {
-  "name": "vite-plugin-missing-locales",
+  "name": "@borerteam/vite-plugin-missing-locales",
   "version": "1.0.0",
   "private": true,
   "type": "module",
