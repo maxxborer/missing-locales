@@ -1,32 +1,6 @@
 import fs from "fs";
 import path from "path";
 
-/**
- * `ViteI18nMissingLocales`
- * Script for finding missed keys in localization in `src/locales/{locale}/*.json`
- * The search is conducted through all files ending in `*.json` in the `src/locales/` directory and nested directories `{locale}/`
- * `src/locales` may contain directories with localizations, such as en, ua, ru, and these directories contain namespace files, such as `common.json`, `auth.json`
- * Output: a list of strings in the format - `[vite-plugin-missing-locales] ${locale}/${namespace}.json -> '${key}'`
- * Written with GitHub Copilot and ChatGPT :)
- * @param path - path to locales directory
- * @param wait - time to wait before run
- * @param defaultNamespace - default namespace
- * @returns console.log with missed keys
- * @example
- * ```ts
- * import { defineConfig } from "vite";
- * import viteI18nMissingLocales from "vite-plugin-missing-locales";
- * export default defineConfig({
- *  plugins: [
- *    viteI18nMissingLocales({
- *      path: "./src/locales",
- *      wait: 300,
- *      defaultNamespace: "translation",
- *    }),
- *   ],
- * });
- * ```
- */
 interface ViteI18nMissingLocalesOptions {
   path?: string;
   wait?: number;
@@ -109,6 +83,32 @@ const debounce = <F extends (...args: Parameters<F>) => ReturnType<F>>(
   };
 };
 
+/**
+ * `ViteI18nMissingLocales`
+ * Script for finding missed keys in localization in `src/locales/{locale}/*.json`
+ * The search is conducted through all files ending in `*.json` in the `src/locales/` directory and nested directories `{locale}/`
+ * `src/locales` may contain directories with localizations, such as en, ua, ru, and these directories contain namespace files, such as `common.json`, `auth.json`
+ * Output: a list of strings in the format - `[vite-plugin-missing-locales] ${locale}/${namespace}.json -> '${key}'`
+ * Written with GitHub Copilot and ChatGPT :)
+ * @param path - path to locales directory
+ * @param wait - time to wait before run
+ * @param defaultNamespace - default namespace
+ * @returns console.log with missed keys
+ * @example
+ * ```ts
+ * import { defineConfig } from "vite";
+ * import viteI18nMissingLocales from "vite-plugin-missing-locales";
+ * export default defineConfig({
+ *  plugins: [
+ *    viteI18nMissingLocales({
+ *      path: "./src/locales",
+ *      wait: 300,
+ *      defaultNamespace: "translation",
+ *    }),
+ *   ],
+ * });
+ * ```
+ */
 export default function viteI18nMissingLocalesWith(
   options?: ViteI18nMissingLocalesOptions,
 ): VitePlugin {
