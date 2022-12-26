@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-interface ViteI18nMissingLocalesOptions {
+interface MissingLocalesOptions {
   path?: string;
   wait?: number;
   defaultNamespace?: string;
@@ -84,7 +84,7 @@ const debounce = <F extends (...args: Parameters<F>) => ReturnType<F>>(
 };
 
 /**
- * `ViteI18nMissingLocales`
+ * `MissingLocales`
  * Script for finding missed keys in localization in `src/locales/{locale}/*.json`
  * The search is conducted through all files ending in `*.json` in the `src/locales/` directory and nested directories `{locale}/`
  * `src/locales` may contain directories with localizations, such as en, ua, ru, and these directories contain namespace files, such as `common.json`, `auth.json`
@@ -97,10 +97,10 @@ const debounce = <F extends (...args: Parameters<F>) => ReturnType<F>>(
  * @example
  * ```ts
  * import { defineConfig } from "vite";
- * import viteI18nMissingLocales from "vite-plugin-missing-locales";
+ * import missingLocales from "@borerteam/vite-plugin-missing-locales";
  * export default defineConfig({
  *  plugins: [
- *    viteI18nMissingLocales({
+ *    missingLocales({
  *      path: "./src/locales",
  *      wait: 300,
  *      defaultNamespace: "translation",
@@ -109,8 +109,8 @@ const debounce = <F extends (...args: Parameters<F>) => ReturnType<F>>(
  * });
  * ```
  */
-export default function viteI18nMissingLocalesWith(
-  options?: ViteI18nMissingLocalesOptions,
+export default function missingLocales(
+  options?: MissingLocalesOptions,
 ): VitePlugin {
   const dirPath = options?.path || "./src/locales";
   const waitBeforeRun = options?.wait || 300;

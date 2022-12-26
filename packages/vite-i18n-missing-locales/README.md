@@ -1,19 +1,19 @@
-# vite-plugin-missing-locales
+# @borerteam/vite-plugin-missing-locales
 
-A Vite plugin that helps you find missed keys in your localization files in `src/locales/{locale}/*.json`.
+A Vite plugin that helps you find missed keys in your localization files.
 
 ## Installation
 
 ```bash
-npm install vite-plugin-missing-locales
+npm install @borerteam/vite-plugin-missing-locales
 ```
 
 ```bash
-yarn add vite-plugin-missing-locales
+yarn add @borerteam/vite-plugin-missing-locales
 ```
 
 ```bash
-pnpm add vite-plugin-missing-locales
+pnpm add @borerteam/vite-plugin-missing-locales
 ```
 
 ## Usage
@@ -21,14 +21,14 @@ pnpm add vite-plugin-missing-locales
 Add the plugin to your `vite.config.js` file:
 
 ```js
-import viteI18nMissingLocales from 'vite-plugin-missing-locales';
+import missingLocales from '@borerteam/vite-plugin-missing-locales';
 
 export default {
   // ...other options
   plugins: [
     // ...other plugins
     // `command === 'serve'` for run plugin only in dev mode
-    command === 'serve' && viteI18nMissingLocales({
+    command === 'serve' && missingLocales({
       path: './src/locales', // optional, default is './src/locales'
       wait: 500, // optional, default is 500 (milliseconds),
       defaultNamespace: 'translation', // optional, default is 'translation'
