@@ -109,15 +109,6 @@ const debounce = <F extends (...args: Parameters<F>) => ReturnType<F>>(
   };
 };
 
-declare module "vite" {
-  interface Plugin {
-    watch?: {
-      include?: string | RegExp | (string | RegExp)[];
-      exclude?: string | RegExp | (string | RegExp)[];
-    };
-  }
-}
-
 export default function viteI18nMissingLocalesWith(
   options?: ViteI18nMissingLocalesOptions,
 ): VitePlugin {
