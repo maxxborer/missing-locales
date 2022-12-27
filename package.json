@@ -1,33 +1,42 @@
 {
-  "name": "@borerteam/vite-plugin-missing-locales",
+  "name": "@borerteam/missing-locales",
   "version": "1.0.0",
   "private": true,
   "type": "module",
   "author": "Maxx Borer <maxxborer@gmail.com>",
-  "description": "A Vite plugin that helps you find missed keys in your localization files.",
+  "description": "Plugins and CLI that helps you find missed keys in your localization files.",
   "keywords": [
     "vite",
+    "webpack",
+    "rollup",
+    "cli",
     "i18n",
     "localization",
+    "locale",
     "missing",
     "keys"
   ],
-  "license": "MIT",
   "scripts": {
-    "dev": "pnpm --dir packages/vite-plugin-missing-locales dev",
-    "build": "pnpm -r build",
-    "release": "pnpm run build && pnpm changeset publish",
-    "publish": "pnpm -r publish"
+    "test": "npx nx run-many --target=test --all --parallel",
+    "build": "npx nx run-many --target=build --all --parallel",
+    "publish": "npx nx run-many --target=publish --all --parallel",
+    "release": "pnpm run build && pnpm run publish",
+    "graph": "npx nx graph",
+    "clear:lock": "npx nx run-many --target=clear:lock --all --parallel",
+    "clear:node_modules": "npx nx run-many --target=clear:node_modules --all --parallel",
+    "clear:dependencies": "npx nx run-many --target=clear:dependencies --all --parallel",
+    "reinstall": "pnpm run clear:lock && pnpm run clear:node_modules && pnpm run clear:dependencies && pnpm ip"
   },
+  "license": "MIT",
   "engines": {
-    "pnpm": "^7.5.0",
-    "yarn": "forbidden, use pnpm",
-    "npm": "forbidden, use pnpm",
     "node": "^16.0.0 || >=18"
   },
   "pnpm": {
     "overrides": {
       "vite-plugin-missing-locales": "workspace:*"
     }
+  },
+  "devDependencies": {
+    "nx": "^15.4.2"
   }
 }

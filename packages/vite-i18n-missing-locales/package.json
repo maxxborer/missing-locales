@@ -5,8 +5,10 @@
   "description": "A Vite plugin that helps you find missed keys in your localization files.",
   "keywords": [
     "vite",
+    "cli",
     "i18n",
     "localization",
+    "locale",
     "missing",
     "keys"
   ],
@@ -24,20 +26,26 @@
   },
   "scripts": {
     "dev": "tsup --watch src",
-    "build": "tsup --dts"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup --dts",
+    "publish": "pnpm publish",
+    "release": "pnpm i && pnpm run build && pnpm run publish",
+    "clear:lock": "rm -rf pnpm-lock.yaml && rm -rf yarn.lock && rm -rf package-lock.json",
+    "clear:node_modules": "rm -rf node_modules",
+    "clear:dependencies": "pnpm run clear:lock && pnpm run clear:node_modules"
   },
   "engines": {
     "node": "^16.0.0 || >=18"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/borerteam/vite-plugin-missing-locales.git",
+    "url": "git+https://github.com/borerteam/missing-locales.git",
     "directory": "packages/vite-plugin-missing-locales"
   },
   "bugs": {
-    "url": "https://github.com/borerteam/vite-plugin-missing-locales/issues"
+    "url": "https://github.com/borerteam/missing-locales/issues"
   },
-  "homepage": "https://github.com/borerteam/vite-plugin-missing-locales/packages/vite-plugin-config-env#readme",
+  "homepage": "https://github.com/borerteam/missing-locales/packages/vite-plugin-config-env#readme",
   "devDependencies": {
     "@types/node": "^18.11.17",
     "tsup": "^6.5.0",

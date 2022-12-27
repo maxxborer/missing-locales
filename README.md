@@ -1,19 +1,19 @@
-# @borerteam/vite-plugin-missing-locales
+# @borerteam/missing-locales
 
-A Vite plugin that helps you find missed keys in your localization files.
+<!-- A Vite plugin that helps you find missed keys in your localization files.
 
 ## Installation
 
 ```bash
-npm install @borerteam/vite-plugin-missing-locales
+npm install @borerteam/missing-locales
 ```
 
 ```bash
-yarn add @borerteam/vite-plugin-missing-locales
+yarn add @borerteam/missing-locales
 ```
 
 ```bash
-pnpm add @borerteam/vite-plugin-missing-locales
+pnpm add @borerteam/missing-locales
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ pnpm add @borerteam/vite-plugin-missing-locales
 Add the plugin to your `vite.config.js` file:
 
 ```js
-import missingLocales from '@borerteam/vite-plugin-missing-locales';
+import missingLocales from '@borerteam/missing-locales';
 
 export default {
   // ...other options
@@ -48,15 +48,15 @@ export default {
 The plugin will output a list of strings in the following format:
 
 ```log
-[vite-plugin-missing-locales] ${locale}/${namespace}.json -> '${key}'
+[missing-locales] ${locale}/${namespace}.json -> '${key}'
 ```
 
 For example:
 
 ```log
-[vite-plugin-missing-locales] en/common.json -> 'hello'
-[vite-plugin-missing-locales] ua/auth.json -> 'login'
-[vite-plugin-missing-locales] ru/error.json -> 'help'
+[missing-locales] en/common.json -> 'hello'
+[missing-locales] ua/auth.json -> 'login'
+[missing-locales] ru/error.json -> 'help'
 ```
 
-This indicates that the `'hello'` key is missing from the `en/common.json` file.
+This indicates that the `'hello'` key is missing from the `en/common.json` file. -->
