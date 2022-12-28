@@ -17,15 +17,21 @@
     "keys"
   ],
   "scripts": {
-    "test": "npx nx run-many --target=test --all --parallel",
-    "build": "npx nx run-many --target=build --all --parallel",
-    "publish": "npx nx run-many --target=publish --all --parallel",
+    "test": "nx run-many --target=test --all --parallel",
+    "build": "nx run-many --target=build --all --parallel",
+    "publish": "nx run-many --target=publish --all --parallel",
     "release": "pnpm run build && pnpm run publish",
-    "graph": "npx nx graph",
-    "clear:lock": "npx nx run-many --target=clear:lock --all --parallel",
-    "clear:node_modules": "npx nx run-many --target=clear:node_modules --all --parallel",
-    "clear:dependencies": "npx nx run-many --target=clear:dependencies --all --parallel",
-    "reinstall": "pnpm run clear:lock && pnpm run clear:node_modules && pnpm run clear:dependencies && pnpm ip"
+    "graph": "nx graph",
+    "clear:lock": "nx run-many --target=clear:lock --all --parallel",
+    "clear:node_modules": "nx run-many --target=clear:node_modules --all --parallel",
+    "clear:dependencies": "nx run-many --target=clear:dependencies --all --parallel",
+    "reinstall": "pnpm run clear:lock && pnpm run clear:node_modules && pnpm run clear:dependencies && pnpm ip",
+    "alpha": "nx run workspace:version --releaseAs=prerelease --preid=alpha",
+    "beta": "nx run workspace:version --releaseAs=prerelease --preid=beta",
+    "patch": "nx run workspace:version --releaseAs=patch",
+    "minor": "nx run workspace:version --releaseAs=minor",
+    "major": "nx run workspace:version --releaseAs=major",
+    "semver": "nx g @jscutlery/semver:install"
   },
   "license": "MIT",
   "engines": {
@@ -37,6 +43,6 @@
     }
   },
   "devDependencies": {
-    "nx": "^15.4.2"
+    "nx": "15.4.2"
   }
 }
