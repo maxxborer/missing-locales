@@ -1,0 +1,6 @@
+{
+  "package1": "j'adore ce paquet",
+  "one": {
+    "nested.key": "Il peut aussi faire ceci"
+  }
+}

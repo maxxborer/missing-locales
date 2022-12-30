@@ -1,0 +1,17 @@
+{
+  "400": {
+    "message": "Bloga užklausa"
+  },
+  "401": {
+    "message": "Neleistina"
+  },
+  "403": {
+    "message": "Draudžiama"
+  },
+  "404": {
+    "message": "nerastas"
+  },
+  "405": {
+    "message": "Metodas neleidžiamas"
+  }
+}

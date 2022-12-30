@@ -1,0 +1,7 @@
+{
+  "love.this.package": "j'adore ce paquet",
+  "ask": "Que peut-il faire d'autre?",
+  "answer": {
+    "two": "Il peut aussi faire ceci"
+  }
+}

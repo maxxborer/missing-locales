@@ -1,0 +1,46 @@
+{
+  "extends": [
+    "airbnb-typescript",
+    "plugin:jest/recommended",
+    "plugin:import/errors",
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier"
+  ],
+  "plugins": [
+    "jest",
+    "@typescript-eslint",
+    "@typescript-eslint/eslint-plugin",
+    "import",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json"],
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "semi": "off",
+    "@typescript-eslint/semi": "error",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "react/jsx-filename-extension": [
+      0
+    ],
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ]
+  }
+}
