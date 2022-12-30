@@ -3,22 +3,30 @@ import missingLocales from "../src";
 
 describe("missingLocales", () => {
   test("empty in locale folders", () => {
-    const missing = missingLocales(path.resolve("../../mock", "./locales_empty"));
+    const missing = missingLocales({
+      path: path.resolve("../../mock", "./locales_empty"),
+    });
     expect(missing).toEqual([]);
   });
 
   test("no missed in single locale", () => {
-    const missing = missingLocales(path.resolve("../../mock", "./locales_single-locale"));
+    const missing = missingLocales({
+      path: path.resolve("../../mock", "./locales_single-locale"),
+    });
     expect(missing).toEqual([]);
   });
 
   test("no missed", () => {
-    const missing = missingLocales(path.resolve("../../mock", "./locales_regular"));
+    const missing = missingLocales({
+      path: path.resolve("../../mock", "./locales_regular"),
+    });
     expect(missing).toEqual([]);
   });
 
   test("missing keys in both languages", () => {
-    const missing = missingLocales(path.resolve("../../mock", "./locales_missed-both"));
+    const missing = missingLocales({
+      path: path.resolve("../../mock", "./locales_missed-both"),
+    });
     expect(missing).toEqual([
       {
         key: "answer{}.one",
@@ -42,7 +50,9 @@ describe("missingLocales", () => {
   });
 
   test("empty in some namespaces", () => {
-    const missing = missingLocales(path.resolve("../../mock", "./locales_some-ns"));
+    const missing = missingLocales({
+      path: path.resolve("../../mock", "./locales_some-ns"),
+    });
     expect(missing).toEqual([
       {
         key: "ERROR: li/messages.json not found",
@@ -57,7 +67,7 @@ describe("missingLocales", () => {
         path: "li/errors.json",
       },
       {
-        key: '405{}.{"message":"Metodas neleidžiamas"}',
+        key: "405{}.{message}",
         namespace: "errors.json",
         locale: "ua",
         path: "ua/errors.json",
@@ -72,7 +82,9 @@ describe("missingLocales", () => {
   });
 
   test("missed in nested folders", () => {
-    const missing = missingLocales(path.resolve("../../mock", "./locales_nested"));
+    const missing = missingLocales({
+      path: path.resolve("../../mock", "./locales_nested"),
+    });
     expect(missing).toEqual([
       {
         key: "ERROR: oneLang/test/none.json not found",
@@ -93,6 +105,18 @@ describe("missingLocales", () => {
         path: "twoLang/test/all.json",
       },
       {
+        key: "answer{}.four.key",
+        namespace: "translation.json",
+        locale: "twoLang",
+        path: "twoLang/translation.json",
+      },
+      {
+        key: "answer{}.tree",
+        namespace: "translation.json",
+        locale: "twoLang",
+        path: "twoLang/translation.json",
+      },
+      {
         key: "answer{}.two",
         namespace: "translation.json",
         locale: "twoLang",
@@ -108,7 +132,9 @@ describe("missingLocales", () => {
   });
 
   test("more languages", () => {
-    const missing = missingLocales(path.resolve("../../mock", "./locales_more-languages"));
+    const missing = missingLocales({
+      path: path.resolve("../../mock", "./locales_more-languages"),
+    });
     expect(missing).toEqual([
       {
         key: "ERROR: one/test/none.json not found",
@@ -147,7 +173,7 @@ describe("missingLocales", () => {
         path: "three/test/all.json",
       },
       {
-        key: 'one{}.{"nested.key":"Il peut aussi faire ceci"}',
+        key: "one{}.{nested.key, nested.key2}",
         namespace: "translation.json",
         locale: "three",
         path: "three/translation.json",
@@ -183,7 +209,7 @@ describe("missingLocales", () => {
         path: "two/translation.json",
       },
       {
-        key: 'one{}.{"nested.key":"Il peut aussi faire ceci"}',
+        key: "one{}.{nested.key, nested.key2}",
         namespace: "translation.json",
         locale: "two",
         path: "two/translation.json",

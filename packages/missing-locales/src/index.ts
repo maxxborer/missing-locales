@@ -2,39 +2,47 @@ import * as fs from "fs";
 import { join, resolve } from "path";
 import v8 from "v8";
 import compareObjects from "./compareObjects";
+import type { JSONValue } from "./compareObjects";
 
-function structuredClone<T>(obj: T): T {
+export function structuredClone<T>(obj: T): T {
   return v8.deserialize(v8.serialize(obj)) as T;
 }
 
-type Namespace = {
+export type MissingLocalesNamespace = {
   locale: string;
   path: string;
   nestPath?: string;
-  children?: Namespace[];
+  children?: MissingLocalesNamespace[];
 };
 
-type Translation = {
+export type MissingLocalesTranslation = {
   key: string;
   namespace: string;
   locale: string;
-  path: string;
+  path?: string;
 };
 
-const folderSeparator = "|";
+export type MissingLocalesProps = {
+  path?: string;
+};
 
-export default function missingLocales(rootDir: string): Translation[] {
+export const folderSeparator = "|";
+
+export default function missingLocales({ path: pathProp }: MissingLocalesProps): MissingLocalesTranslation[] {
+  const defaultRootDir = "src/locales";
+  const rootDir = pathProp || defaultRootDir;
+
   const locales: string[] = [];
-  const namespaces: Namespace[] = [];
+  const namespaces: MissingLocalesNamespace[] = [];
   // const keys: KeyObject[] = [];
-  const foundMissingKeys: Translation[] = [];
+  const foundMissingKeys: MissingLocalesTranslation[] = [];
   // find all locales with directory check
   locales.push(
     ...fs.readdirSync(resolve(rootDir)).filter((name: string) => fs.statSync(join(rootDir, name)).isDirectory()),
   );
 
   // find all namespaces and nesting namespaces in locales folders with file check ending with .json and push with type Namespaces
-  const getNamespaces = (pathDir: string, locale: string): Namespace[] => {
+  const getNamespaces = (pathDir: string, locale: string): MissingLocalesNamespace[] => {
     if (!fs.existsSync(pathDir)) return [];
     return fs
       .readdirSync(pathDir)
@@ -48,14 +56,14 @@ export default function missingLocales(rootDir: string): Translation[] {
           return { path, locale };
         }
       })
-      .filter(Boolean) as Namespace[];
+      .filter(Boolean) as MissingLocalesNamespace[];
   };
 
   locales.forEach((locale) => namespaces.push(...getNamespaces(join(rootDir, locale), locale)));
   if (namespaces.length === 0) return [];
 
   // find all missing keys and missing nested keys in namespaces between locales with for loop
-  const namespacesNodes: Namespace[] = structuredClone(namespaces);
+  const namespacesNodes: MissingLocalesNamespace[] = structuredClone(namespaces);
 
   while (namespacesNodes.length > 0) {
     const namespaceNode = namespacesNodes.shift()!;
@@ -132,3 +140,5 @@ export default function missingLocales(rootDir: string): Translation[] {
 
   return foundMissingKeys.sort((a, b) => (a.locale > b.locale ? 1 : -1));
 }
+
+export { compareObjects, JSONValue };

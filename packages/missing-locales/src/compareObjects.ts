@@ -1,9 +1,9 @@
-type JSONValue = string | number | boolean | { [x: string]: JSONValue } | Array<JSONValue>;
+export type JSONValue = string | number | boolean | { [x: string]: JSONValue } | Array<JSONValue>;
 
 const getExecutedValue = (obj: any): string => {
   const isObject = obj && typeof obj === "object"; // eslint-disable-line @typescript-eslint/no-unsafe-assignment
   const isArray = obj && Array.isArray(obj); // eslint-disable-line @typescript-eslint/no-unsafe-assignment
-  const value = isObject && !isArray ? JSON.stringify(obj) : String(obj);
+  const value = isObject && !isArray ? `{${Object.keys(obj as object).join(", ")}}` : String(obj);
   return value;
 };
 

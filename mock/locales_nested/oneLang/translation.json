@@ -2,6 +2,8 @@
   "love.this.package": "j'adore ce paquet",
   "ask": "Que peut-il faire d'autre?",
   "answer": {
-    "two": "Il peut aussi faire ceci"
+    "two": "Il peut aussi faire ceci",
+    "tree": "Il peut aussi faire cela",
+    "four.key": "Il peut aussi faire ça"
   }
 }
