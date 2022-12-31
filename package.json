@@ -7,8 +7,6 @@
   "description": "Plugins and CLI that helps you find missed keys in your localization files.",
   "keywords": [
     "vite",
-    "webpack",
-    "rollup",
     "cli",
     "i18n",
     "localization",
@@ -16,6 +14,10 @@
     "missing",
     "keys"
   ],
+  "license": "MIT",
+  "engines": {
+    "node": "^16.0.0 || >=18"
+  },
   "scripts": {
     "lint": "eslint . --ext .ts,.js",
     "lint:fix": "eslint . --ext .ts,.js --fix",
@@ -35,23 +37,14 @@
     "major": "nx run workspace:version --releaseAs=major",
     "semver": "nx g @jscutlery/semver:install"
   },
-  "license": "MIT",
-  "engines": {
-    "node": "^16.0.0 || >=18"
-  },
-  "pnpm": {
-    "overrides": {
-      "vite-plugin-missing-locales": "workspace:*"
-    }
-  },
   "devDependencies": {
-    "@babel/core": "^7.20.7",
-    "@babel/preset-env": "^7.20.2",
-    "@babel/preset-typescript": "^7.18.6",
+    "@babel/core": "7.20.7",
+    "@babel/preset-env": "7.20.2",
+    "@babel/preset-typescript": "7.18.6",
     "@typescript-eslint/eslint-plugin": "5.47.1",
     "@typescript-eslint/parser": "5.47.1",
-    "babel-jest": "^29.3.1",
-    "eslint": "8.2.0",
+    "babel-jest": "29.3.1",
+    "eslint": "8.30.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-config-airbnb-typescript": "17.0.0",
     "eslint-config-prettier": "8.5.0",
@@ -62,5 +55,10 @@
     "nx": "15.4.2",
     "prettier": "2.8.1",
     "typescript": "4.9.4"
+  },
+  "pnpm": {
+    "overrides": {
+      "vite-plugin-missing-locales": "workspace:*"
+    }
   }
 }

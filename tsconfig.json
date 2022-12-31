@@ -1,6 +1,6 @@
 {
   "include": [
-    "packages",
+    "packages/**/*",
     "__tests__"
   ],
   "compilerOptions": {

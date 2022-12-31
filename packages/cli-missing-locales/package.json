@@ -56,6 +56,6 @@
   },
   "dependencies": {
     "@borerteam/missing-locales": "workspace:../missing-locales",
-    "commander": "^9.4.1"
+    "commander": "9.4.1"
   }
 }

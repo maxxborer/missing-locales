@@ -1,6 +1,6 @@
 /** @type {import("tsup").Options} */
 export const tsup = {
-  entryPoints: ["src/index.ts"],
+  entryPoints: ["src/index.ts", "src/cli"],
   format: ["esm", "cjs"],
   sourcemap: true,
   splitting: false,
