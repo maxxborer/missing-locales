@@ -4,28 +4,28 @@ import missingLocales from "../src";
 describe("missingLocales", () => {
   test("empty in locale folders", () => {
     const missing = missingLocales({
-      path: path.resolve("../../mock", "./locales_empty"),
+      path: String(path.resolve("../../mock", "./locales_empty")),
     });
     expect(missing).toEqual([]);
   });
 
   test("no missed in single locale", () => {
     const missing = missingLocales({
-      path: path.resolve("../../mock", "./locales_single-locale"),
+      path: String(path.resolve("../../mock", "./locales_single-locale")),
     });
     expect(missing).toEqual([]);
   });
 
   test("no missed", () => {
     const missing = missingLocales({
-      path: path.resolve("../../mock", "./locales_regular"),
+      path: String(path.resolve("../../mock", "./locales_regular")),
     });
     expect(missing).toEqual([]);
   });
 
   test("missing keys in both languages", () => {
     const missing = missingLocales({
-      path: path.resolve("../../mock", "./locales_missed-both"),
+      path: String(path.resolve("../../mock", "./locales_missed-both")),
     });
     expect(missing).toEqual([
       {
@@ -51,7 +51,7 @@ describe("missingLocales", () => {
 
   test("empty in some namespaces", () => {
     const missing = missingLocales({
-      path: path.resolve("../../mock", "./locales_some-ns"),
+      path: String(path.resolve("../../mock", "./locales_some-ns")),
     });
     expect(missing).toEqual([
       {
@@ -83,7 +83,7 @@ describe("missingLocales", () => {
 
   test("missed in nested folders", () => {
     const missing = missingLocales({
-      path: path.resolve("../../mock", "./locales_nested"),
+      path: String(path.resolve("../../mock", "./locales_nested")),
     });
     expect(missing).toEqual([
       {
@@ -133,7 +133,7 @@ describe("missingLocales", () => {
 
   test("more languages", () => {
     const missing = missingLocales({
-      path: path.resolve("../../mock", "./locales_more-languages"),
+      path: String(path.resolve("../../mock", "./locales_more-languages")),
     });
     expect(missing).toEqual([
       {

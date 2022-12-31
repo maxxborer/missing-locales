@@ -1,7 +1,22 @@
 {
   "include": [
-    "packages/**/*",
-    "__tests__"
+    "./**/*.ts",
+    "./**/*.js",
+    "./.*.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/node_modules/**/*",
+    "node_modules/**/*",
+    "**/node_modules",
+    "dist",
+    "**/dist",
+    "dist/**/*",
+    "**/dist/**/*",
+    "packages/**/dist",
+    "packages/**/dist/**/*",
+    "packages/**/node_modules",
+    "packages/**/node_modules/**/*",
   ],
   "compilerOptions": {
     "outDir": "dist",

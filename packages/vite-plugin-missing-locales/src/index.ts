@@ -18,7 +18,7 @@ export default function viteMissingLocales(options?: VitePluginMissingLocalesPro
   const hot: boolean = options?.hot || false;
 
   const showMissedKeys = () => {
-    const localesPath = !!path ? resolve(path) : undefined;
+    const localesPath = !!path ? String(resolve(path)) : undefined;
     if (localesPath ? fs.existsSync(localesPath) : false) {
       console.log(`\x1b[31m[vite-plugin-missing-locales] Error: localesPath not exist\x1b[0m`);
     } else {

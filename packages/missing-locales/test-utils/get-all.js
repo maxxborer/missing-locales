@@ -6,7 +6,7 @@ console.log("START");
 console.log(
   "\nlocales_empty\n",
   missingLocales({
-    path: path.resolve("../../", "mock", "./locales_empty"),
+    path: String(path.resolve("../../", "mock", "./locales_empty")),
   }),
   "\n----------------------------------\n",
 );
@@ -14,7 +14,7 @@ console.log(
 console.log(
   "\nlocale\n",
   missingLocales({
-    path: path.resolve("../../", "mock", "./locales_single-locale"),
+    path: String(path.resolve("../../", "mock", "./locales_single-locale")),
   }),
   "\n----------------------------------\n",
 );
@@ -22,7 +22,7 @@ console.log(
 console.log(
   "\nlocales_regular\n",
   missingLocales({
-    path: path.resolve("../../", "mock", "./locales_regular"),
+    path: String(path.resolve("../../", "mock", "./locales_regular")),
   }),
   "\n----------------------------------\n",
 );
@@ -30,7 +30,7 @@ console.log(
 console.log(
   "\nboth\n",
   missingLocales({
-    path: path.resolve("../../", "mock", "./locales_missed-both"),
+    path: String(path.resolve("../../", "mock", "./locales_missed-both")),
   }),
   "\n----------------------------------\n",
 );
@@ -38,7 +38,7 @@ console.log(
 console.log(
   "\nns\n",
   missingLocales({
-    path: path.resolve("../../", "mock", "./locales_some-ns"),
+    path: String(path.resolve("../../", "mock", "./locales_some-ns")),
   }),
   "\n----------------------------------\n",
 );
@@ -46,7 +46,7 @@ console.log(
 console.log(
   "\nlocales_nested\n",
   missingLocales({
-    path: path.resolve("../../", "mock", "./locales_nested"),
+    path: String(path.resolve("../../", "mock", "./locales_nested")),
   }),
   "\n----------------------------------\n",
 );
@@ -54,7 +54,7 @@ console.log(
 console.log(
   "\nlocales_more-languages\n",
   missingLocales({
-    path: path.resolve("../../", "mock", "./locales_more-languages"),
+    path: String(path.resolve("../../", "mock", "./locales_more-languages")),
   }),
   "\n----------------------------------\n",
 );

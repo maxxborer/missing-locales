@@ -1,5 +1,12 @@
 export type JSONValue = string | number | boolean | { [x: string]: JSONValue } | Array<JSONValue>;
 
+/**
+ * Returns a string representation of the given object.
+ * If the object is an array, returns a string representation of the elements joined by ", ".
+ * If the object is an object, returns a string representation of its keys joined by ", ".
+ * @param obj - The object to get the string representation of.
+ * @returns The string representation of the object.
+ */
 const getExecutedValue = (obj: any): string => {
   const isObject = obj && typeof obj === "object"; // eslint-disable-line @typescript-eslint/no-unsafe-assignment
   const isArray = obj && Array.isArray(obj); // eslint-disable-line @typescript-eslint/no-unsafe-assignment
@@ -7,6 +14,17 @@ const getExecutedValue = (obj: any): string => {
   return value;
 };
 
+/**
+ * Compares two objects and returns an object with two arrays, one containing keys that are present in the first object
+ * but not in the second, and another containing keys that are present in the second object but not in the first.
+ * If either object is null or undefined, the other object is returned in the corresponding array.
+ * If either object is an array, their elements are recursively compared and the resulting keys are nested with their
+ * indices. If either object is an object, their keys are recursively compared.
+ * @param obj1 - The first object to compare.
+ * @param obj2 - The second object to compare.
+ * @returns An object with two arrays, missingInFirst and missingInSecond, containing keys that are present in the
+ * first and second objects respectively, but not in the other.
+ */
 export default function compareObjects(obj1: any, obj2: any): { missingInFirst: string[]; missingInSecond: string[] } {
   if (obj1 === null || obj1 === undefined) {
     const value = getExecutedValue(obj2);
