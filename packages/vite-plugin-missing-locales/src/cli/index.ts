@@ -1,1 +1,1 @@
-import "@borerteam/cli-missing-locales";
+import "@borertm/missing-locales-cli";

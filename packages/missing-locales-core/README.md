@@ -1,19 +1,19 @@
-# @borerteam/missing-locales
+# @borertm/missing-locales
 
 A Vite plugin that helps you find missed keys in your localization files.
 
 ## Installation
 
 ```bash
-npm install @borerteam/missing-locales
+npm install @borertm/missing-locales
 ```
 
 ```bash
-yarn add @borerteam/missing-locales
+yarn add @borertm/missing-locales
 ```
 
 ```bash
-pnpm add @borerteam/missing-locales
+pnpm add @borertm/missing-locales
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ pnpm add @borerteam/missing-locales
 Add the plugin to your `vite.config.js` file:
 
 ```js
-import missingLocales from '@borerteam/missing-locales';
+import missingLocales from '@borertm/missing-locales';
 
 export default {
   // ...other options

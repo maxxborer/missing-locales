@@ -39,7 +39,7 @@ export const folderSeparator = "|";
  * @returns Array of missing keys with namespace, locale and path to file
  * @example
  * ```ts
- * import missingLocales from "@borerteam/missing-locales";
+ * import missingLocales from "@borertm/missing-locales";
  *
  * const missingKeys = missingLocales({ path: "src/locales" });
  *
@@ -68,7 +68,7 @@ export default function missingLocales({ path: pathProp }: MissingLocalesProps):
   const localesDirs: string[] = fs.readdirSync(String(path.resolve(rootDir))).filter((name: string) => {
     const fullPath = String(path.join(rootDir, name));
     return !!fs.statSync(fullPath).isDirectory();
-  }) as string[];
+  });
 
   locales.push(...localesDirs);
 

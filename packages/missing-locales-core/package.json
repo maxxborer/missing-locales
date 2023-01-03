@@ -1,6 +1,6 @@
 {
-  "name": "@borerteam/missing-locales",
-  "version": "1.1.0",
+  "name": "@borertm/missing-locales-core",
+  "version": "0.0.1",
   "author": "Maxx Borer <maxxborer@gmail.com>",
   "description": "A Vite plugin that helps you find missed keys in your localization files.",
   "keywords": [
@@ -40,13 +40,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/borerteam/missing-locales.git",
+    "url": "git+https://github.com/borertm/missing-locales.git",
     "directory": "packages/missing-locales"
   },
   "bugs": {
-    "url": "https://github.com/borerteam/missing-locales/issues"
+    "url": "https://github.com/borertm/missing-locales/issues"
   },
-  "homepage": "https://github.com/borerteam/missing-locales/packages/vite-plugin-config-env#readme",
+  "homepage": "https://github.com/borertm/missing-locales/packages/vite-plugin-config-env#readme",
   "devDependencies": {
     "@types/jest": "29.2.4",
     "@types/node": "18.11.17",

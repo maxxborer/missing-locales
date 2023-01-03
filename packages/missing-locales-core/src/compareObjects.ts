@@ -37,7 +37,7 @@ export default function compareObjects(obj1: any, obj2: any): { missingInFirst: 
   const missingInFirst: string[] = [];
   const missingInSecond: string[] = [];
 
-  // Сравниваем ключи на первом уровне вложенности
+  // Compare keys at the first nesting level
   for (const key in obj1) {
     if (!(key in obj2)) {
       missingInSecond.push(key);
@@ -49,16 +49,16 @@ export default function compareObjects(obj1: any, obj2: any): { missingInFirst: 
     }
   }
 
-  // Сравниваем вложенные объекты и массивы
+  // Comparing nested objects and arrays
   for (const key in obj1) {
     if (typeof obj1[key] === "object" && obj1[key] !== null) {
       if (Array.isArray(obj1[key])) {
-        // Сравниваем массивы
+        // Comparing arrays
         for (let i = 0; i < obj1[key].length; i++) {
           const path1 = obj1[key][i] as JSONValue;
           const path2 = obj2[key][i] as JSONValue;
           if (typeof path1 === "object" && path1 !== null) {
-            // Сравниваем вложенные объекты
+            // Comparing nested objects
             const result = compareObjects(path1, path2);
             // FIXME:
             // @ts-ignore
@@ -75,7 +75,7 @@ export default function compareObjects(obj1: any, obj2: any): { missingInFirst: 
           }
         }
       } else {
-        // Сравниваем объекты
+        // Compare objects
         const result = compareObjects(obj1[key], obj2[key]);
         missingInFirst.push(...result.missingInFirst.map((k) => `${key}{}.${k}`));
         missingInSecond.push(...result.missingInSecond.map((k) => `${key}{}.${k}`));

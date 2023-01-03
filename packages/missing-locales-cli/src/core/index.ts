@@ -1,26 +1,28 @@
-import missingLocales from "@borerteam/missing-locales";
-import type { MissingLocalesTranslation } from "@borerteam/missing-locales";
+import { Command } from "commander";
+import { version } from "../../package.json";
+import missingLocales, { compareObjects } from "@borertm/missing-locales-core";
+import type { MissingLocalesTranslation } from "@borertm/missing-locales-core";
 
-export type CliMissingLocalesProps = {
+export type CoreCliMissingLocalesProps = {
   path?: string;
   logPrefix?: string;
 };
 
-export type CliMissingLocalesArgs = CliMissingLocalesProps;
+export type CliMissingLocalesArgs = CoreCliMissingLocalesProps;
 
 export type CombinedMissingKeys = {
   path?: string;
   keys?: MissingLocalesTranslation[];
 };
 
-export type CliMissingLocalesResult = {
+export type CoreCliMissingLocalesResult = {
   output: string;
   missingKeys: MissingLocalesTranslation[];
 };
 
-export default function cliMissingLocales(props?: CliMissingLocalesProps): CliMissingLocalesResult {
+export default function coreCliMissingLocales(props?: CoreCliMissingLocalesProps): CoreCliMissingLocalesResult {
   const path = props && props.path;
-  const logPrefix = (props && props.logPrefix) || "[cli-missing-locales]";
+  const logPrefix = (props && props.logPrefix) || "[missing-locales/cli]";
 
   const missingKeys = missingLocales({ path });
 
@@ -61,3 +63,17 @@ export default function cliMissingLocales(props?: CliMissingLocalesProps): CliMi
   console.log(`${logPrefix} Total: ${missingKeys.length}`);
   return { output, missingKeys };
 }
+
+export const cli = (logPrefix?: string) => {
+  const program = new Command();
+  const options: CoreCliMissingLocalesProps = program
+    .version(version)
+    .option("-p, --path <path>", "Path to the locales folder")
+    .option("-l, --log-prefix <prefix>", "Log prefix for the output")
+    .parse()
+    .opts();
+
+  coreCliMissingLocales({ ...options, ...(logPrefix && { logPrefix }) });
+};
+
+export { compareObjects };
