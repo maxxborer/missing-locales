@@ -11,6 +11,14 @@ interface VitePluginMissingLocalesProps extends CoreCliMissingLocalesProps {
   hot?: boolean;
 }
 
+/**
+ * Vite plugin that helps find missing locales in Vite projects.
+ * @param options - Options for the plugin.
+ * @param options.wait - The amount of time to wait in milliseconds before running the plugin after a change is detected. Defaults to 300.
+ * @param options.path - The path to the locales files. Defaults to "./src/locales".
+ * @param options.hot - Whether to run the plugin in hot mode. If true, the plugin will run after the specified wait time after any change is detected. If false, the plugin will run only if files in the locales path are changed. Defaults to false.
+ * @returns A Vite plugin that can be installed in a Vite project.
+ */
 export default function viteMissingLocales(options?: VitePluginMissingLocalesProps): Plugin {
   const path: string = resolve(options?.path || "./src/locales");
   const wait: number = options?.wait || 300;

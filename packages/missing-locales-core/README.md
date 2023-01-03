@@ -1,62 +1,50 @@
-# @borertm/missing-locales
+# @borertm/missing-locales-core
 
-A Vite plugin that helps you find missed keys in your localization files.
+A utility for finding missing keys in locales.
 
 ## Installation
 
-```bash
-npm install @borertm/missing-locales
+```shell
+npm install @borertm/missing-locales-core
 ```
 
-```bash
-yarn add @borertm/missing-locales
+```shell
+yarn add @borertm/missing-locales-core
 ```
 
-```bash
-pnpm add @borertm/missing-locales
+```shell
+pnpm add @borertm/missing-locales-core
 ```
 
 ## Usage
 
-Add the plugin to your `vite.config.js` file:
-
 ```js
-import missingLocales from '@borertm/missing-locales';
+import missingLocales from "@borertm/missing-locales-core";
 
-export default {
-  // ...other options
-  plugins: [
-    // ...other plugins
-    // `command === 'serve'` for run plugin only in dev mode
-    command === 'serve' && missingLocales({
-      path: './src/locales', // optional, default is './src/locales'
-      wait: 500, // optional, default is 500 (milliseconds),
-      defaultNamespace: 'translation', // optional, default is 'translation'
-    }),
-  ],
-};
+const missingKeys = missingLocales({ path: "src/locales" });
+console.log(missingKeys);
+
+// [
+//   {
+//     key
+//     namespace
+//     locale
+//     path
+//   },
+//   ...
+// ]
 ```
 
-## Options
+## API
 
-- `path` (optional, default is `'./src/locales'`): the path to the `src/locales` directory.
-- `wait` (optional, default is `500`): the number of milliseconds to wait before running the plugin.
-- `defaultNamespace` (optional, default is `'translation'`): the default namespace to use when the namespace is not specified.
+- `path` - Type: `string` (optional, default is `'./src/locales'`): the path to the locales directory.
 
-## Output
+## License
 
-The plugin will output a list of strings in the following format:
+MIT
 
-```log
-[missing-locales] ${locale}/${namespace}.json -> '${key}'
-```
+## Links
 
-For example:
-
-```log
-[missing-locales] en/common.json -> 'hello'
-[missing-locales] ua/auth.json -> 'login'
-[missing-locales] ru/error.json -> 'help'
-```
-
-This indicates that the `'hello'` key is missing from the `en/common.json` file.
+- [Repository](https://github.com/borertm/missing-locales/packages/missing-locales-core)
+- [Issues](https://github.com/borertm/missing-locales/issues)
+- [NPM](https://www.npmjs.com/package/@borertm/missing-locales-core)

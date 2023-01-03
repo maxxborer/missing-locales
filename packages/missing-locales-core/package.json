@@ -46,7 +46,7 @@
   "bugs": {
     "url": "https://github.com/borertm/missing-locales/issues"
   },
-  "homepage": "https://github.com/borertm/missing-locales/packages/vite-plugin-config-env#readme",
+  "homepage": "https://github.com/borertm/missing-locales/packages/missing-locales-core#readme",
   "devDependencies": {
     "@types/jest": "29.2.4",
     "@types/node": "18.11.17",

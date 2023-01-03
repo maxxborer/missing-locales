@@ -1,62 +1,52 @@
-# @borertm/missing-locales/vite
+# @borertm/vite-plugin-missing-locales
 
-A Vite plugin that helps you find missed keys in your localization files.
+A Vite plugin that helps find missing locales in Vite projects.
 
 ## Installation
 
-```bash
-npm install @borertm/missing-locales/vite
+```shell
+npm install @borertm/vite-plugin-missing-locales
 ```
 
-```bash
-yarn add @borertm/missing-locales/vite
+```shell
+yarn add @borertm/vite-plugin-missing-locales
 ```
 
-```bash
-pnpm add @borertm/missing-locales/vite
+```shell
+pnpm add @borertm/vite-plugin-missing-locales
 ```
 
 ## Usage
 
-Add the plugin to your `vite.config.js` file:
-
 ```js
-import missingLocales from '@borertm/missing-locales/vite';
+import viteMissingLocales from "@borertm/vite-plugin-missing-locales";
 
 export default {
-  // ...other options
-  plugins: [
-    // ...other plugins
-    // `command === 'serve'` for run plugin only in dev mode
-    command === 'serve' && missingLocales({
-      path: './src/locales', // optional, default is './src/locales'
-      wait: 500, // optional, default is 500 (milliseconds),
-      defaultNamespace: 'translation', // optional, default is 'translation'
-    }),
-  ],
+  plugins: [viteMissingLocales({
+    path: "./src/locales",
+    wait: 300,
+    hot: false
+  })],
 };
 ```
 
-## Options
+## API
 
-- `path` (optional, default is `'./src/locales'`): the path to the `src/locales` directory.
-- `wait` (optional, default is `500`): the number of milliseconds to wait before running the plugin.
-- `defaultNamespace` (optional, default is `'translation'`): the default namespace to use when the namespace is not specified.
+- `wait` - Type: `number` (optional, default is `'./src/locales'`): the amount of time to wait in milliseconds before running the plugin after a change is detected. Defaults to 300.
+- `path` - Type: `string` (optional, default is `'./src/locales'`): the path to the locales directory.
+- `hot` - Type: `boolean` (optional, default is `'./src/locales'`): whether to run the plugin in hot mode. If true, the plugin will run after the specified wait time after any change is detected. If false, the plugin will run only if files in the locales path are changed. Defaults to false.
 
 ## Output
 
-The plugin will output a list of strings in the following format:
+Object containing the output string and the missing keys array.
 
-```log
-[missing-locales/vite] ${locale}/${namespace}.json -> '${key}'
+```shell
+[missing-locales/vite] en/main.json:
+--> 'any.key1'
+--> 'any.key2'
+[missing-locales/vite] Total: 2
 ```
 
-For example:
+## License
 
-```log
-[missing-locales/vite] en/common.json -> 'hello'
-[missing-locales/vite] ua/auth.json -> 'login'
-[missing-locales/vite] ru/error.json -> 'help'
-```
-
-This indicates that the `'hello'` key is missing from the `en/common.json` file.
+MIT

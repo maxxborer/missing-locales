@@ -20,6 +20,13 @@ export type CoreCliMissingLocalesResult = {
   missingKeys: MissingLocalesTranslation[];
 };
 
+/**
+ * Core function for missing locales CLI.
+ * @param props - Optional properties for the function.
+ * @param props.path - Path to the locales folder.
+ * @param props.logPrefix - Log prefix for the output.
+ * @returns Object containing the output string and the missing keys array.
+ */
 export default function coreCliMissingLocales(props?: CoreCliMissingLocalesProps): CoreCliMissingLocalesResult {
   const path = props && props.path;
   const logPrefix = (props && props.logPrefix) || "[missing-locales/cli]";
@@ -64,6 +71,10 @@ export default function coreCliMissingLocales(props?: CoreCliMissingLocalesProps
   return { output, missingKeys };
 }
 
+/**
+ * CLI for missing locales.
+ * @param logPrefix - Optional log prefix for the output.
+ */
 export const cli = (logPrefix?: string) => {
   const program = new Command();
   const options: CoreCliMissingLocalesProps = program
