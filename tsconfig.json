@@ -1,8 +1,11 @@
 {
   "include": [
     "./**/*.ts",
+    "./**/*.tsx",
     "./**/*.js",
-    "./.*.js"
+    "./**/*.jsx",
+    "./**/*.json",
+    "./**/*.d.ts"
   ],
   "exclude": [
     "node_modules",
@@ -16,7 +19,7 @@
     "packages/**/dist",
     "packages/**/dist/**/*",
     "packages/**/node_modules",
-    "packages/**/node_modules/**/*",
+    "packages/**/node_modules/**/*"
   ],
   "compilerOptions": {
     "outDir": "dist",

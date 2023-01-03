@@ -39,7 +39,7 @@ export const folderSeparator = "|";
  * @returns Array of missing keys with namespace, locale and path to file
  * @example
  * ```ts
- * import missingLocales from "@borertm/missing-locales";
+ * import missingLocales from "@borert/missing-locales";
  *
  * const missingKeys = missingLocales({ path: "src/locales" });
  *

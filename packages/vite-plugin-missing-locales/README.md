@@ -1,25 +1,25 @@
-# @borertm/vite-plugin-missing-locales
+# @borert/vite-plugin-missing-locales
 
 A Vite plugin that helps find missing locales in Vite projects.
 
 ## Installation
 
 ```shell
-npm install @borertm/vite-plugin-missing-locales
+npm install @borert/vite-plugin-missing-locales
 ```
 
 ```shell
-yarn add @borertm/vite-plugin-missing-locales
+yarn add @borert/vite-plugin-missing-locales
 ```
 
 ```shell
-pnpm add @borertm/vite-plugin-missing-locales
+pnpm add @borert/vite-plugin-missing-locales
 ```
 
 ## Usage
 
 ```js
-import viteMissingLocales from "@borertm/vite-plugin-missing-locales";
+import viteMissingLocales from "@borert/vite-plugin-missing-locales";
 
 export default {
   plugins: [viteMissingLocales({

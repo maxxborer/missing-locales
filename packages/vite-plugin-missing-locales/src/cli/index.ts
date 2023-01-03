@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-import "@borertm/missing-locales-cli";
+import "@borert/missing-locales-cli";

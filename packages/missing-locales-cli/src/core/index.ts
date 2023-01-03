@@ -1,7 +1,7 @@
 import { Command } from "commander";
 import { version } from "../../package.json";
-import missingLocales, { compareObjects } from "@borertm/missing-locales-core";
-import type { MissingLocalesTranslation } from "@borertm/missing-locales-core";
+import missingLocales, { compareObjects } from "@borert/missing-locales-core";
+import type { MissingLocalesTranslation } from "@borert/missing-locales-core";
 
 export type CoreCliMissingLocalesProps = {
   path?: string;

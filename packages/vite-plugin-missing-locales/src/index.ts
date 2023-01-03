@@ -1,8 +1,8 @@
 import fs from "fs";
 import { resolve } from "path";
 import type { Plugin, ViteDevServer } from "vite";
-import { core } from "@borertm/missing-locales-cli";
-import type { CoreCliMissingLocalesProps } from "@borertm/missing-locales-cli";
+import { core } from "@borert/missing-locales-cli";
+import type { CoreCliMissingLocalesProps } from "@borert/missing-locales-cli";
 import debounce from "./debounce";
 
 interface VitePluginMissingLocalesProps extends CoreCliMissingLocalesProps {

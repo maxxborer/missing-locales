@@ -1,5 +1,5 @@
 {
-  "name": "@borertm/vite-plugin-missing-locales",
+  "name": "@borert/vite-plugin-missing-locales",
   "version": "0.0.1",
   "author": "Maxx Borer <maxxborer@gmail.com>",
   "description": "A Vite plugin that helps you find missed keys in your localization files.",
@@ -29,7 +29,7 @@
     }
   },
   "bin": {
-    "@borertm/vite-plugin-missing-locales": "./dist/cli/index.cjs"
+    "@borert/vite-plugin-missing-locales": "./dist/cli/index.cjs"
   },
   "files": [
     "dist",
@@ -53,7 +53,7 @@
     "test": "jest",
     "build": "tsup --dts",
     "publish": "pnpm publish",
-    "release": "pnpm i && pnpm run build && pnpm run publish",
+    "release": "pnpm run publish",
     "clear:lock": "rm -rf pnpm-lock.yaml && rm -rf yarn.lock && rm -rf package-lock.json",
     "clear:node_modules": "rm -rf node_modules",
     "clear:dependencies": "pnpm run clear:lock && pnpm run clear:node_modules"
@@ -63,15 +63,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/borertm/missing-locales.git",
+    "url": "git+https://github.com/borert/missing-locales.git",
     "directory": "packages/missing-locales/vite"
   },
   "bugs": {
-    "url": "https://github.com/borertm/missing-locales/issues"
+    "url": "https://github.com/borert/missing-locales/issues"
   },
-  "homepage": "https://github.com/borertm/missing-locales/packages/vite-plugin-missing-locales#readme",
+  "homepage": "https://github.com/borert/missing-locales/packages/vite-plugin-missing-locales#readme",
   "dependencies": {
-    "@borertm/missing-locales-cli": "workspace:../missing-locales-cli"
+    "@borert/missing-locales-cli": "workspace:../missing-locales-cli"
   },
   "devDependencies": {
     "@types/jest": "29.2.4",
