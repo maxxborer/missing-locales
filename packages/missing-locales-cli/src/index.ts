@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import core, { cli, compareObjects } from "./core";
 import type {
   CoreCliMissingLocalesProps,

@@ -13,6 +13,9 @@
     "keys"
   ],
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -26,7 +29,7 @@
     }
   },
   "bin": {
-    "@borertm/missing-locales-cli": "./index.js"
+    "@borertm/missing-locales-cli": "./dist/index.cjs"
   },
   "files": [
     "dist",
