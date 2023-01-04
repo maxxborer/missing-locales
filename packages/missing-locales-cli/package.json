@@ -4,7 +4,6 @@
   "author": "Maxx Borer <maxxborer@gmail.com>",
   "description": "A Vite plugin that helps you find missed keys in your localization files.",
   "keywords": [
-    "vite",
     "cli",
     "i18n",
     "localization",
