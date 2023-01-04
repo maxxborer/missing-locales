@@ -1,6 +1,6 @@
 {
   "name": "@boergrp/vite-plugin-missing-locales",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "author": "Maxx Borer <maxxborer@gmail.com>",
   "description": "A Vite plugin that helps you find missed keys in your localization files.",
   "keywords": [
@@ -24,13 +24,13 @@
     "*": {
       "*": [
         "./dist/*",
-        "./dist/index.d.ts"
+        "./dist/index.d.ts",
+        "./dist/cli/*",
+        "./dist/cli/index.d.ts"
       ]
     }
   },
-  "bin": {
-    "@boergrp/vite-plugin-missing-locales": "./dist/cli/index.cjs"
-  },
+  "bin": "./dist/cli/index.js",
   "files": [
     "dist",
     "*.d.ts"
