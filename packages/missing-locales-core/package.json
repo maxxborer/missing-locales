@@ -25,6 +25,10 @@
     },
     "./package.json": "./package.json"
   },
+  "files": [
+    "dist",
+    "*.d.ts"
+  ],
   "scripts": {
     "get-all": "node ./utils/get-all.js",
     "test": "jest",

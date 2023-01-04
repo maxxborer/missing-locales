@@ -32,9 +32,7 @@
   },
   "files": [
     "dist",
-    "*.d.ts",
-    "*.js",
-    "*.cjs"
+    "*.d.ts"
   ],
   "exports": {
     ".": {
