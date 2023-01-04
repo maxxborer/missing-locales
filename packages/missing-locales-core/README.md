@@ -1,25 +1,25 @@
-# @borert/missing-locales-core
+# @boergrp/missing-locales-core
 
 A utility for finding missing keys in locales.
 
 ## Installation
 
 ```shell
-npm install @borert/missing-locales-core
+npm install @boergrp/missing-locales-core
 ```
 
 ```shell
-yarn add @borert/missing-locales-core
+yarn add @boergrp/missing-locales-core
 ```
 
 ```shell
-pnpm add @borert/missing-locales-core
+pnpm add @boergrp/missing-locales-core
 ```
 
 ## Usage
 
 ```js
-import missingLocales from "@borert/missing-locales-core";
+import missingLocales from "@boergrp/missing-locales-core";
 
 const missingKeys = missingLocales({ path: "src/locales" });
 console.log(missingKeys);
@@ -45,6 +45,6 @@ MIT
 
 ## Links
 
-- [Repository](https://github.com/borert/missing-locales/packages/missing-locales-core)
-- [Issues](https://github.com/borert/missing-locales/issues)
-- [NPM](https://www.npmjs.com/package/@borert/missing-locales-core)
+- [Repository](https://github.com/boergrp/missing-locales/packages/missing-locales-core)
+- [Issues](https://github.com/boergrp/missing-locales/issues)
+- [NPM](https://www.npmjs.com/package/@boergrp/missing-locales-core)

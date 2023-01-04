@@ -1,5 +1,5 @@
 {
-  "name": "@borert/vite-plugin-missing-locales",
+  "name": "@boergrp/vite-plugin-missing-locales",
   "version": "0.0.5",
   "author": "Maxx Borer <maxxborer@gmail.com>",
   "description": "A Vite plugin that helps you find missed keys in your localization files.",
@@ -29,7 +29,7 @@
     }
   },
   "bin": {
-    "@borert/vite-plugin-missing-locales": "./dist/cli/index.cjs"
+    "@boergrp/vite-plugin-missing-locales": "./dist/cli/index.cjs"
   },
   "files": [
     "dist",
@@ -61,15 +61,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/borert/missing-locales.git",
+    "url": "git+https://github.com/boergrp/missing-locales.git",
     "directory": "packages/missing-locales/vite"
   },
   "bugs": {
-    "url": "https://github.com/borert/missing-locales/issues"
+    "url": "https://github.com/boergrp/missing-locales/issues"
   },
-  "homepage": "https://github.com/borert/missing-locales/packages/vite-plugin-missing-locales#readme",
+  "homepage": "https://github.com/boergrp/missing-locales/packages/vite-plugin-missing-locales#readme",
   "dependencies": {
-    "@borert/missing-locales-cli": "workspace:*"
+    "@boergrp/missing-locales-cli": "workspace:*"
   },
   "devDependencies": {
     "@types/jest": "29.2.4",

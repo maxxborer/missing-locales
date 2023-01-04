@@ -1,25 +1,25 @@
-# @borert/missing-locales-cli
+# @boergrp/missing-locales-cli
 
-A command line interface for finding missing keys in locales using the @borert/missing-locales-core package.
+A command line interface for finding missing keys in locales using the @boergrp/missing-locales-core package.
 
 ## Installation
 
 ```shell
-npm install @borert/missing-locales-cli
+npm install @boergrp/missing-locales-cli
 ```
 
 ```shell
-yarn add @borert/missing-locales-cli
+yarn add @boergrp/missing-locales-cli
 ```
 
 ```shell
-pnpm add @borert/missing-locales-cli
+pnpm add @boergrp/missing-locales-cli
 ```
 
 ## Usage
 
 ```shell
-@borert/missing-locales-cli [options]
+@boergrp/missing-locales-cli [options]
 ```
 
 ## Options

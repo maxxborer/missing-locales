@@ -2,6 +2,6 @@
   "options": {
     "baseBranch": "main",
     "preset": "conventional",
-    "tagPrefix": "borert@"
+    "tagPrefix": "boergrp@"
   }
 }
