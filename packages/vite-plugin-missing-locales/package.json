@@ -50,7 +50,7 @@
     "dev": "tsup --watch src",
     "test": "jest",
     "build": "tsup --dts",
-    "publish": "npm publish --access public",
+    "publish": "pnpm publish --access public",
     "release": "pnpm run publish",
     "clear:lock": "rm -rf pnpm-lock.yaml && rm -rf yarn.lock && rm -rf package-lock.json",
     "clear:node_modules": "rm -rf node_modules",
@@ -69,7 +69,7 @@
   },
   "homepage": "https://github.com/borert/missing-locales/packages/vite-plugin-missing-locales#readme",
   "dependencies": {
-    "@borert/missing-locales-cli": "workspace:../missing-locales-cli"
+    "@borert/missing-locales-cli": "workspace:*"
   },
   "devDependencies": {
     "@types/jest": "29.2.4",

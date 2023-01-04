@@ -34,7 +34,7 @@
     "test": "jest",
     "dev": "tsup --watch src",
     "build": "tsup --dts",
-    "publish": "npm publish --access public",
+    "publish": "pnpm publish --access public",
     "release": "pnpm run publish",
     "clear:lock": "rm -rf pnpm-lock.yaml && rm -rf yarn.lock && rm -rf package-lock.json",
     "clear:node_modules": "rm -rf node_modules",

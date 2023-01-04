@@ -44,7 +44,7 @@ importers:
 
   packages/missing-locales-cli:
     specifiers:
-      '@borert/missing-locales-core': workspace:../missing-locales-core
+      '@borert/missing-locales-core': workspace:*
       '@types/jest': 29.2.4
       '@types/node': 18.11.17
       commander: 9.4.1
@@ -81,7 +81,7 @@ importers:
 
   packages/vite-plugin-missing-locales:
     specifiers:
-      '@borert/missing-locales-cli': workspace:../missing-locales-cli
+      '@borert/missing-locales-cli': workspace:*
       '@types/jest': 29.2.4
       '@types/node': 18.11.17
       jest: 29.3.1
