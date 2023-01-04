@@ -19,7 +19,7 @@ pnpm add @boergrp/missing-locales-cli
 ## Usage
 
 ```shell
-@boergrp/missing-locales-cli [options]
+missing-locales-cli [options]
 ```
 
 ## Options
@@ -48,3 +48,9 @@ __Example__
 ## License
 
 MIT
+
+## Links
+
+- [Repository](https://github.com/boergrp/missing-locales/packages/missing-locales-cli)
+- [Issues](https://github.com/boergrp/missing-locales/issues)
+- [NPM](https://www.npmjs.com/package/@boergrp/missing-locales-cli)

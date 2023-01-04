@@ -18,6 +18,8 @@ pnpm add @boergrp/vite-plugin-missing-locales
 
 ## Usage
 
+__In your vite.config.js:__
+
 ```js
 import viteMissingLocales from "@boergrp/vite-plugin-missing-locales";
 
@@ -28,6 +30,12 @@ export default {
     hot: false
   })],
 };
+```
+
+__In shell:__
+
+```shell
+vite-plugin-missing-locales [options]
 ```
 
 ## API
@@ -50,3 +58,9 @@ Object containing the output string and the missing keys array.
 ## License
 
 MIT
+
+## Links
+
+- [Repository](https://github.com/boergrp/missing-locales/packages/vite-plugin-missing-locales)
+- [Issues](https://github.com/boergrp/missing-locales/issues)
+- [NPM](https://www.npmjs.com/package/@boergrp/vite-plugin-missing-locales)
