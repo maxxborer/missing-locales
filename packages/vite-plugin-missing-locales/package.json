@@ -1,6 +1,6 @@
 {
   "name": "@borert/vite-plugin-missing-locales",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Maxx Borer <maxxborer@gmail.com>",
   "description": "A Vite plugin that helps you find missed keys in your localization files.",
   "keywords": [
@@ -52,7 +52,7 @@
     "dev": "tsup --watch src",
     "test": "jest",
     "build": "tsup --dts",
-    "publish": "pnpm publish",
+    "publish": "npm publish --access public",
     "release": "pnpm run publish",
     "clear:lock": "rm -rf pnpm-lock.yaml && rm -rf yarn.lock && rm -rf package-lock.json",
     "clear:node_modules": "rm -rf node_modules",
