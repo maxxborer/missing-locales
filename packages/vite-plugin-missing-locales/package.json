@@ -1,6 +1,6 @@
 {
   "name": "@borert/vite-plugin-missing-locales",
-  "version": "0.0.4-beta.1",
+  "version": "0.0.4",
   "author": "Maxx Borer <maxxborer@gmail.com>",
   "description": "A Vite plugin that helps you find missed keys in your localization files.",
   "keywords": [
