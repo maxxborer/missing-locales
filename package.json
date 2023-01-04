@@ -23,7 +23,7 @@
     "lint:fix": "eslint . --ext .ts,.js --fix",
     "test": "nx run-many --target=test --all --parallel",
     "build": "nx run-many --target=build --all --parallel",
-    "publish": "nx run-many --target=publish --all --parallel",
+    "publish": "NPM_TOKEN=$NPM_TOKEN nx run-many --target=publish --all --parallel",
     "prerelease": "pnpm i && pnpm run lint && pnpm run test && pnpm run build",
     "graph": "nx graph",
     "clear:lock": "nx run-many --target=clear:lock --all --parallel",
