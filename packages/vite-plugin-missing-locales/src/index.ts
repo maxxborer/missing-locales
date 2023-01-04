@@ -20,7 +20,7 @@ interface VitePluginMissingLocalesProps extends CoreCliMissingLocalesProps {
  * @returns A Vite plugin that can be installed in a Vite project.
  */
 export default function viteMissingLocales(options?: VitePluginMissingLocalesProps): Plugin {
-  const path: string = resolve(options?.path || "./src/locales");
+  const path: string = resolve(options?.path || "./src/locales") as string;
   const wait: number = options?.wait || 300;
   const hot: boolean = options?.hot || false;
 
